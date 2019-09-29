@@ -1,1 +1,33 @@
-<p>peliculas works!</p>
+<div class="row" *ngIf="firstCharge">
+    <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand"></a>
+        <form class="form-inline" (ngSubmit)="filterBy(busqueda)">
+          <input class="form-control mr-sm-2" type="search" (keyup)="filterByName($event.target.value)"
+            placeholder="Buscar" aria-label="Search" data-toggle="tooltip" data-placement="bottom"
+            title="Buscar pelicula por titulo">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="pi pi-search-plus"></i></button>
+        </form>
+      </nav>
+      <div style="text-align:center">
+        <h1>
+          STAR WARS
+        </h1>
+      </div>
+  
+      <div class="container mt-3 card" *ngFor="let pelicula  of peliculas">
+        <div class="text-center">
+          <h2 style="color: #000067;">{{pelicula.title}}</h2>
+        </div>
+        <p>{{pelicula.opening_crawl}}.</p>
+        <div class="col-12  text-right mb-3">
+          <a class="btn btn-outline-primary btn-md buttonDetail" role="button"
+            (click)="movieSelect(pelicula)">Detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!firstCharge" style="display: flex;justify-content: center;align-content: center;align-items: center;min-height: 40em;">
+      <i class="pi pi-spin pi-spinner" style="font-size: 6em"></i>
+      <h2>Cargando...</h2>
+  </div>
