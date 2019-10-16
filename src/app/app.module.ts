@@ -6,6 +6,7 @@ import { PeliculasComponent } from './peliculas/peliculas.component';
 import { PeliculasDetailComponent } from './peliculas-detail/peliculas-detail.component';
 import { PersonajesDetailComponent } from './personajes-detail/personajes-detail.component';
 import { PlanetasDetailComponent } from './planetas-detail/planetas-detail.component';
+import { EspeciesDetailComponent } from './especies-detail/especies-detail.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PlanetasDetailComponent } from './planetas-detail/planetas-detail.compo
     PeliculasComponent,
     PeliculasDetailComponent,
     PersonajesDetailComponent,
-    PlanetasDetailComponent
+    PlanetasDetailComponent,
+    EspeciesDetailComponent
   ],
   imports: [
     BrowserModule
