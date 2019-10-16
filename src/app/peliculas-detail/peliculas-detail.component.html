@@ -1,0 +1,154 @@
+<div class="row" *ngIf="firstCharge">
+    <div class="container">
+      <a href=""><i class="pi pi-home" style="font-size: 2em"></i><h6> Inicio</h6></a>
+      <p-tabView *ngIf="id">
+        <p-tabPanel header="Episodios">
+          <div class="row">
+              <div class="container">
+  
+                      <div>
+                        <div class="text-center">
+                            <h1>{{pelicula.title}}</h1>
+                        </div>
+                        <p>{{pelicula.opening_crawl}}</p>
+                        <b>Director: </b> {{pelicula.director}} <br>
+                        <b>Productor: </b> {{pelicula.producer}} <br>
+                        <b>Fecha de lanzamiento: </b> {{pelicula.release_date}} <br>
+                        <b>Personajes: </b> {{pelicula.director}} <br>
+                        <b>Planetas: </b> {{pelicula.director}} <br>
+                        <b>Vehiculos: </b> {{pelicula.director}} <br>
+                        <b>Especies: </b> {{pelicula.director}} <br>
+                        <b>Creado: </b> {{pelicula.created |date: 'mediumDate'}} <br>
+                        <b>Editado: </b> {{pelicula.edited |date: 'mediumDate'}} <br>
+                      </div>
+  
+              </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Personajes">
+          <div class="row">
+            <div class="container">
+              <div class="col-12" style="display: flex;justify-content: space-between;flex-flow: wrap;">
+                <div class="col-4" *ngFor="let personaje of personajes" style="margin-top: 1em;margin-bottom: 1em;">
+                  <p-card header="{{personaje.name}}" [style]="{width: '320px'}"
+                    styleClass="ui-card-shadow">
+                    <p-header>
+                      <img src="Card" src="../../assets/swa.png">
+                    </p-header>
+                    <div>
+                      <b>Altura: </b> {{personaje.height}} <br>
+                      <b>Masa: </b> {{personaje.mass}} <br>
+                      <b>Año de nacimiento: </b> {{personaje.birth_year}} <br>
+                    </div>
+                    <p-footer>
+                      <button pButton type="button" label="Detalle" style="margin-right: .25em" (click)="detailSelect(personaje,'personaje')"></button>
+                    </p-footer>
+                  </p-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Planetas">
+            <div class="row">
+                <div class="container">
+                  <div class="col-12" style="display: flex;justify-content: space-between;flex-flow: wrap;">
+                    <div class="col-4" *ngFor="let planeta of planetas" style="margin-top: 1em;margin-bottom: 1em;">
+                      <p-card header="{{planeta.name}}" [style]="{width: '320px'}"
+                        styleClass="ui-card-shadow">
+                        <p-header>
+                          <img src="Card" src="../../assets/planetas.jpg">
+                        </p-header>
+                        <div>
+                          <b>Altura: </b> {{planeta.height}} <br>
+                          <b>Masa: </b> {{planeta.mass}} <br>
+                          <b>Año de nacimiento: </b> {{planeta.birth_year}} <br>
+                        </div>
+                        <p-footer>
+                          <button pButton type="button" label="Detalle" style="margin-right: .25em" (click)="detailSelect(planeta,'planeta')"></button>
+                        </p-footer>
+                      </p-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </p-tabPanel>
+        <p-tabPanel header="Especies">
+            <div class="row">
+                <div class="container">
+                  <div class="col-12" style="display: flex;justify-content: space-between;flex-flow: wrap;">
+                    <div class="col-4" *ngFor="let especie of especies" style="margin-top: 1em;margin-bottom: 1em;">
+                      <p-card header="{{especie.name}}" [style]="{width: '320px'}"
+                        styleClass="ui-card-shadow">
+                        <p-header>
+                          <img src="Card" src="../../assets/especies.jpg">
+                        </p-header>
+                        <div>
+                          <b>Altura: </b> {{especie.height}} <br>
+                          <b>Masa: </b> {{especie.mass}} <br>
+                          <b>Año de nacimiento: </b> {{especie.birth_year}} <br>
+                        </div>
+                        <p-footer>
+                          <button pButton type="button" label="Detalle" style="margin-right: .25em"></button>
+                        </p-footer>
+                      </p-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </p-tabPanel>
+        <p-tabPanel header="Vehiculos">
+            <div class="row">
+                <div class="container">
+                  <div class="col-12" style="display: flex;justify-content: space-between;flex-flow: wrap;">
+                    <div class="col-4" *ngFor="let vehiculo of vehiculos" style="margin-top: 1em;margin-bottom: 1em;">
+                      <p-card header="{{vehiculo.name}}" [style]="{width: '320px'}"
+                        styleClass="ui-card-shadow">
+                        <p-header>
+                          <img src="Card" src="../../assets/vehiculos.jpg">
+                        </p-header>
+                        <div>
+                          <b>Altura: </b> {{vehiculo.height}} <br>
+                          <b>Masa: </b> {{vehiculo.mass}} <br>
+                          <b>Año de nacimiento: </b> {{vehiculo.birth_year}} <br>
+                        </div>
+                        <p-footer>
+                          <button pButton type="button" label="Detalle" style="margin-right: .25em"></button>
+                        </p-footer>
+                      </p-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </p-tabPanel>
+        <p-tabPanel header="Naves">
+            <div class="row">
+                <div class="container">
+                  <div class="col-12" style="display: flex;justify-content: space-between;flex-flow: wrap;">
+                    <div class="col-4" *ngFor="let nave of naves" style="margin-top: 1em;margin-bottom: 1em;">
+                      <p-card header="{{nave.name}}" [style]="{width: '320px'}"
+                        styleClass="ui-card-shadow">
+                        <p-header>
+                          <img src="Card" src="../../assets/naves.jpg">
+                        </p-header>
+                        <div>
+                          <b>Altura: </b> {{nave.height}} <br>
+                          <b>Masa: </b> {{nave.mass}} <br>
+                          <b>Año de nacimiento: </b> {{nave.birth_year}} <br>
+                        </div>
+                        <p-footer>
+                          <button pButton type="button" label="Detalle" style="margin-right: .25em"></button>
+                        </p-footer>
+                      </p-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+  <div *ngIf="!firstCharge" style="display: flex;justify-content: center;align-content: center;align-items: center;min-height: 40em;">
+      <i class="pi pi-spin pi-spinner" style="font-size: 6em"></i>
+      <h2>Cargando...</h2>
+  </div>
